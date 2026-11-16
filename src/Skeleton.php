@@ -274,13 +274,17 @@ class Skeleton
 
         $rclass = new ReflectionClass(get_class($rels));
         $rprop = $rclass->getProperty('relationships');
-        $rprop->setAccessible(true);
+        if (PHP_VERSION_ID < 80100) {
+            $rprop->setAccessible(true);
+        }
         $defs = $rprop->getValue($rels);
 
         foreach ($defs as $name => $def) {
             $rclass = new ReflectionClass(get_class($def));
             $rprop = $rclass->getProperty('foreignMapperClass');
-            $rprop->setAccessible(true);
+            if (PHP_VERSION_ID < 80100) {
+                $rprop->setAccessible(true);
+            }
             $foreignMapperClass = $rprop->getValue($def);
             switch (true) {
                 case $def instanceof OneToMany:
