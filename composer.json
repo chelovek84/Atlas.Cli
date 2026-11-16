@@ -2,7 +2,13 @@
     "name": "atlas/cli",
     "type": "library",
     "description": "Command-line interface for Atlas.",
-    "keywords": [ "sql", "data", "mapper", "mapping", "orm" ],
+    "keywords": [
+        "sql",
+        "data",
+        "mapper",
+        "mapping",
+        "orm"
+    ],
     "homepage": "http://github.com/atlasphp/Atlas.Cli",
     "license": "MIT",
     "authors": [
@@ -23,7 +29,7 @@
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "~7.0",
+        "phpunit/phpunit": "^9.6",
         "pds/skeleton": "~1.0"
     },
     "autoload-dev": {
