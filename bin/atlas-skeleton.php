@@ -67,4 +67,4 @@ $command = new \Atlas\Cli\Skeleton(
 );
 
 $code = $command();
-exit($code);
+exit((int) $code);
